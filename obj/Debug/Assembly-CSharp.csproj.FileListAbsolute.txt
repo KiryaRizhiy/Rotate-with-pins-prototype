@@ -1,0 +1,3 @@
+C:\GD\Rotate with pins prototype\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\GD\Rotate with pins prototype\obj\Debug\Assembly-CSharp.dll
+C:\GD\Rotate with pins prototype\obj\Debug\Assembly-CSharp.pdb
