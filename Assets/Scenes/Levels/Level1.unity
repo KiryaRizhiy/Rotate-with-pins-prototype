@@ -120,28 +120,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &77431317 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 77431317, guid: 1cfa89003319ae9429f4c0f00bbbb374,
-    type: 3}
-  m_PrefabInstance: {fileID: 735883074647453186}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &77431322
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77431317}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,10 +372,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: VictoryZone
       objectReference: {fileID: 0}
-    - target: {fileID: 77431317, guid: 1cfa89003319ae9429f4c0f00bbbb374, type: 3}
-      propertyPath: m_TagString
-      value: VictoryZone
-      objectReference: {fileID: 0}
     - target: {fileID: 735883073630790837, guid: 1cfa89003319ae9429f4c0f00bbbb374,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -524,6 +498,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cadf4c23308a9f94a814bc7fe0ec348b, type: 3}
+--- !u!1001 &6394717752336454578
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6394717751738404178, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_Name
+      value: DestructionZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394717751738404179, guid: fe1b8f79715d854468c3fb0ba82fe938,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe1b8f79715d854468c3fb0ba82fe938, type: 3}
 --- !u!1001 &6900669162931992248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -714,6 +757,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 858640416, guid: 4bfda04a008430e41af9f85a5bef56d4, type: 3}
+      propertyPath: m_Name
+      value: RetryButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfda04a008430e41af9f85a5bef56d4, type: 3}

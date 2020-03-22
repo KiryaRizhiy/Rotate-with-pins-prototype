@@ -12,5 +12,7 @@ public class Ball : MonoBehaviour
     {
         if (_c.tag == "VictoryZone")
             Engine.BallInVictoryZone();
+        if (_c.tag == "Border")
+            Engine.BallLost();
     }
 }
