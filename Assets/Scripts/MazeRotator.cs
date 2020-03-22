@@ -5,7 +5,7 @@ using UnityEngine;
 public class MazeRotator : MonoBehaviour
 {
     public static Vector3 ScreenPosition;
-    private float alpha, beta, displacementProjection, currentRotation;
+    private float alpha, beta, displacementProjection, previousRotation;
     void Start()
     {
         ScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
@@ -45,12 +45,18 @@ public class MazeRotator : MonoBehaviour
     }
     void Rotate(float rotation)
     {
-        if (Mathf.Abs(rotation) > Settings.rotationLimit)
+        if (Mathf.Abs(rotation - previousRotation) > Settings.accelerationLimit)//Предельное ускорение
         {
+            Logger.AddContent(UILogDataType.Computations, "Rotation acceleration limit reached!", true);
+            rotation = previousRotation + Settings.accelerationLimit * Mathf.Sign(rotation - previousRotation);
+        }
+        if (Mathf.Abs(rotation) > Settings.rotationLimit)//Предельная скорость
+        {
+            Logger.UpdateContent(UILogDataType.Computations, "Rotation speed limit reached!", true);
             rotation = Settings.rotationLimit * Mathf.Sign(rotation);
-            Logger.UpdateContent(UILogDataType.Computations, "Rotation limit reached!", true);
         }
         transform.Rotate(Vector3.forward, rotation);
+        previousRotation = rotation;
     }
     void DrawLine(Vector3 start, Vector3 end, float time)
     {
