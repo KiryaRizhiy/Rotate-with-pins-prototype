@@ -89,4 +89,4 @@ public static class Logger
         }
     }
 }
-public enum UILogDataType {Controls,Computations};
+public enum UILogDataType {Controls,Computations,GameState};

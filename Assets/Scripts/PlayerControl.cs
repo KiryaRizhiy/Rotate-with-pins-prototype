@@ -10,13 +10,9 @@ public class PlayerControl : MonoBehaviour
     public static Vector2 displacement;
     public static Vector2 position;
 
-    // Start is called before the first frame update
     void Start()
     {
-
     }
-
-    // Update is called once per frame
     void Update()
     {
         displacement = Vector2.zero;
