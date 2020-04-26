@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 858640419}
   - component: {fileID: 858640418}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RetryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1122,6 +1122,7 @@ GameObject:
   - component: {fileID: 7829957199129778592}
   - component: {fileID: 7829957199129778623}
   - component: {fileID: 7829957199129778622}
+  - component: {fileID: 9213506325320566099}
   m_Layer: 5
   m_Name: GameplayInterface
   m_TagString: Untagged
@@ -1209,6 +1210,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &9213506325320566099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7829957199129778621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe12e67304d4b844a6b6bc698d69438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7829957199257905815
 GameObject:
   m_ObjectHideFlags: 0

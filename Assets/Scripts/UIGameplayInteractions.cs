@@ -6,7 +6,7 @@ public class UIGameplayInteractions : MonoBehaviour
 {
     public void NextLevel()
     {
-        Engine.NextLevel();
+        Engine.LevelDone();
     }
     public void RestartLevel()
     {

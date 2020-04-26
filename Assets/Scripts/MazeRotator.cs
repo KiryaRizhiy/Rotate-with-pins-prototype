@@ -12,7 +12,7 @@ public class MazeRotator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (PlayerControl.displacement != Vector2.zero)
         {
