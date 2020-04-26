@@ -758,10 +758,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 858640416, guid: 4bfda04a008430e41af9f85a5bef56d4, type: 3}
-      propertyPath: m_Name
-      value: RetryButton
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bfda04a008430e41af9f85a5bef56d4, type: 3}
 --- !u!1001 &7883378501241060329
