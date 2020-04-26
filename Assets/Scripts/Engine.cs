@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GameAnalyticsSDK;
 
 public static class Engine
 {
+    private static int levelsPerSession;
     public static GameSessionState sessionState 
     {
         get
@@ -27,19 +29,28 @@ public static class Engine
     {
         session.BallLost();
     }
+    public static void LevelDone()
+    {
+        if (AdCaller.isReady)
+            AdCaller.ShowAds();
+        else
+            NextLevel();
+    }
     public static void NextLevel()
     {
-        int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentBuildIndex >= SceneManager.sceneCountInBuildSettings - 1)
+        int newSceneBuildIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (newSceneBuildIndex >= SceneManager.sceneCountInBuildSettings)
         {
-            Debug.LogError("No more levels");
-            return;
+            newSceneBuildIndex = 1;
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(newSceneBuildIndex);
         session = new GameSession(SceneManager.GetActiveScene());
+        levelsPerSession++;
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Level" + (newSceneBuildIndex - 1).ToString() + " started. Total levels count -" + levelsPerSession);
     }
     public static void RestartLevel()
     {
+        GameAnalytics.NewProgressionEvent(GAProgressionStatus.Start, "Level" + SceneManager.GetActiveScene().ToString() + " restarted");  
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         session = new GameSession(SceneManager.GetActiveScene());
     }
@@ -59,7 +70,11 @@ public class GameSession
         {
             _s = value;
             Debug.Log("State change detected");
-            Events.OnSessionStateChanged(value);
+            if (value == GameSessionState.Won)
+                GameAnalytics.NewProgressionEvent(GAProgressionStatus.Complete, "Level" + level.buildIndex + " won");
+            if (value == GameSessionState.Lost)
+                GameAnalytics.NewProgressionEvent(GAProgressionStatus.Fail, "Level" + level.buildIndex + " failed");
+            CustomEvents.OnSessionStateChanged(value);
         }
     }
     public GameSession(Scene lvl)
@@ -74,6 +89,8 @@ public class GameSession
     }
     public void BallInVictoryZone()
     {
+        if (ballsInVictoryZone == 0)
+            AdCaller.LoadAds();
         ballsInVictoryZone += 1;
         Logger.UpdateContent(UILogDataType.GameState, "Balls amount: " + ballsTotal + ", balls in box: " + ballsInVictoryZone);
         if (ballsTotal == ballsInVictoryZone)
